@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.yontainer {
+    display: flex;
+    min-height: 800px;
+    min-width: 500px;
+    border: 2px dotted red;
+}
+
+.yolumn {
+    flex: 1;
+    min-height: 200px;
+    min-width: 200px;
+    border: 2px solid chartreuse;
+}
+
+.dojos-box {
+    min-height: 100px;
+    min-width: 100px;
+    border: 2px dotted blueviolet;
+}
