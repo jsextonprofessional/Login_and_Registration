@@ -13,26 +13,36 @@
     <div class="yontainer">
         <div class="yolumn">
             <h1>Login and Registration</h1><br>
+            <!-- flash msg "You have been logged out" -->
             <h2>Register here!</h2><br>
-            <form action="/process_dojo" method="POST">
+            <form action="/users/register" method="POST">
                 <label for="first_name">First Name: </label>
+                <!-- Flash "This field is required" -->
+                <!-- If pw or user's entered info is unsuccessful, save info per field sans pw -->
                 <input type="text" name="first_name"><br><br>
                 <label for="last_name">Last Name: </label>
+                <!-- Flash "This field is required" -->
                 <input type="text" name="last_name"><br><br>
                 <label for="email">Email: </label>
+                <!-- Flash "This field is required" -->
                 <input type="text" name="email"><br><br>
                 <label for="password">Password: </label>
-                <input type="text" name="password"><br><br>
+                <!-- Flash "This field is required" -->
+                <input type="password" name="password"><br><br>
                 <label for="confirm_password">Confirm Password: </label>
-                <input type="text" name="confirm_password"><br><br>
-                <input type="submit" name="create" value="Register">
+                <!-- Flash "This field is required" -->
+                <input type="password" name="confirm_password"><br><br>
+                <input type="submit" value="Register">
             </form>
         </div>
         <div class="yolumn">
             <h2>Login Here</h2><br>
-            <form action="">
+            <form action="/users/login" method="POST">
                 <label for="email">Email: </label>
+                <!-- Flash "You could not be logged in" -->
                 <input type="text" name="email"><br><br>
+                <label for="password">Password: </label>
+                <input type="password" name="password"><br><br>
                 <input type="submit" value="Login">
             </form>
         </div>
