@@ -12,7 +12,14 @@ def index():
 
 @app.route('/users/register', methods = ['POST'])
 def user_registration():
-    print(User.registration_validation(request.form))
+    if User.registration_validation(request.form):
+        data = {
+            'first_name': request.form['first_name'],
+            'last_name': request.form['last_name'],
+            'email': request.form['email'],
+            'password': bcrypt.generate_password_hash(request.form['password'])
+        }
+        User.insert_user(data)
     return redirect('/')
 
 @app.route('/success')
