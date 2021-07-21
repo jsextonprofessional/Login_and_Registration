@@ -19,7 +19,9 @@ def user_registration():
             'email': request.form['email'],
             'password': bcrypt.generate_password_hash(request.form['password'])
         }
-        User.insert_user(data)
+        user = User.insert_user(data)
+        session['user_id'] = user
+        session['first_name'] = request.form['first_name']
         return redirect('/success')
     return redirect('/')
 

@@ -10,15 +10,7 @@
     <title>Login and Registration</title>
 </head>
 <body>
-    <div class="yontainer">
-        <!-- Necesito flash msg "You've successfully registered" -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <p>{{message}}</p>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+    <div class="yontainer justify-content-between">
         <h1>Welcome, you've been logged in, {{ session['first_name'] }}</h1>
         <br>
         <!-- Why is logout button stuck to <h1>?? -->
