@@ -19,9 +19,9 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-        <!-- BUG HERE GET HELP -->
         <h1>Welcome, you've been logged in, {{ session['first_name'] }}</h1>
         <br>
+        <!-- Why is logout button stuck to <h1>?? -->
         <div>
             <a href="/logout">Logout</a>
         </div>
