@@ -28,8 +28,15 @@ class User():
             flash('Last Name should be between 2 and 45 characters.')
     # email - valid email format, not already in DB, was submitted, not already in db
         if not EMAIL_REGEX.match(data['email']):
-            flash('Email address invalid, please try again')
+            flash('Email address invalid, please try again.')
             is_valid = False
     # pw - at least 8 - 255 char, was submitted
+        if len(data['password']) < 8:
+            flash('Password must be at least 8 characters.')
+            is_valid = False
     # confirm pw - matches pw
+        if data['password'] != data['confirm_password']:
+            flash('Passwords must match.')
+            is_valid = False
+            
         return is_valid
